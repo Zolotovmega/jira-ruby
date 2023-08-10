@@ -130,6 +130,8 @@ module JIRA
         @consumer = @request_client.consumer
       when :jwt
         @request_client = JwtClient.new(@options)
+      when :jwt_header
+        @request_client = JwtHeaderClient.new(@options)
       when :basic
         @request_client = HttpClient.new(@options)
       when :cookie
